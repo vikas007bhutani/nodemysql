@@ -22,7 +22,12 @@ con.connect((err) => {
   }
   console.log('Connection established');
 });
+con.query('SELECT * FROM loyaluser', (err,rows) => {
+  if(err) throw err;
 
+  console.log('Data received from Db:\n');
+  console.log(rows);
+});
 // var app = express()  
 // app.use(bodyParser());  
 // app.use(bodyParser.json({limit:'5mb'}));   
