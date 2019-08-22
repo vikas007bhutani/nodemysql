@@ -1,7 +1,7 @@
 var express = require('express');  
 var path = require("path");   
 var bodyParser = require('body-parser');  
-var mongo = require("mysql");  
+var mysql = require("mysql");  
  
 const con = mysql.createConnection({
   host: 'localhost',
