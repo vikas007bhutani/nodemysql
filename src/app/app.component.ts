@@ -12,14 +12,15 @@ import {Http,Response, Headers, RequestOptions } from '@angular/http';
 export class AppComponent {  
     
      
-  constructor(private newService :CommonService) {   }  
-   Repdata ;  
+  constructor(private newService   :CommonService) {   }  
+   Repdata:any ;  
    valbutton ="Save";  
    
    
 ngOnInit() {    
   debugger;
-  console.log( this.newService.GetUser());
+  this.newService.GetUser().subscribe(data =>  this.Repdata = data)  
+  console.log(this.Repdata);
 }  
   
 onSave = function(user,isValid: boolean) {    
