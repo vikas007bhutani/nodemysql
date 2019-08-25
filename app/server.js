@@ -28,19 +28,19 @@ con.query('SELECT * FROM loyaluser', (err,rows) => {
   console.log('Data received from Db:\n');
   console.log(rows);
 });
-// var app = express()  
-// app.use(bodyParser());  
-// app.use(bodyParser.json({limit:'5mb'}));   
-// app.use(bodyParser.urlencoded({extended:true}));  
+var app = express()  
+app.use(bodyParser());  
+app.use(bodyParser.json({limit:'5mb'}));   
+app.use(bodyParser.urlencoded({extended:true}));  
    
   
-// app.use(function (req, res, next) {        
-//      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4201');    
-//      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');    
-//      res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');      
-//      res.setHeader('Access-Control-Allow-Credentials', true);       
-//      next();  
-//  });  
+app.use(function (req, res, next) {        
+     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4201');    
+     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');    
+     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');      
+     res.setHeader('Access-Control-Allow-Credentials', true);       
+     next();  
+ });  
   
 //  var Schema = mongo.Schema;  
   
@@ -94,19 +94,16 @@ con.query('SELECT * FROM loyaluser', (err,rows) => {
   
   
   
-//  app.get("/api/getUser",function(req,res){  
-//     model.find({},function(err,data){  
-//               if(err){  
-//                   res.send(err);  
-//               }  
-//               else{                
-//                   res.send(data);  
-//                   }  
-//           });  
-//   })  
+ app.get("/api/getUser",function(req,res){  
+  res.status(200).send({
+    success: 'true',
+    message: 'todos retrieved successfully',
+    todos: db
+        })
+  });
   
   
-// app.listen(8080, function () {  
+app.listen(8080, function () {  
     
-//  console.log('Example app listening on port 8080!')  
-// })  
+ console.log('Example app listening on port 8080!')  
+})  
