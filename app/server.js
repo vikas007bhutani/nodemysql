@@ -1,13 +1,10 @@
-var express = require('express');  
+
 var path = require("path");   
 var bodyParser = require('body-parser');  
 var mysql = require("mysql");  
 var cors = require("cors");
+var express = require('express');  
 
-app.use(cors({
-  origin: true,
-  credentials: true
-}));
 
 const con = mysql.createConnection({
   host: 'localhost',
@@ -99,6 +96,10 @@ app.use(function (req, res, next) {
 //    })  
   
   
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
   
  app.get("/api/getUser",function(req,res){  
   res.status(200).send({
