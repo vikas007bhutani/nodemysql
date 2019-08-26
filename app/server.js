@@ -2,7 +2,13 @@ var express = require('express');
 var path = require("path");   
 var bodyParser = require('body-parser');  
 var mysql = require("mysql");  
- 
+var cors = require("cors");
+
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
+
 const con = mysql.createConnection({
   host: 'localhost',
   user: 'root',
