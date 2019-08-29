@@ -18,7 +18,7 @@ export class CommonService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'q= 0.8;application / json; q = 0.9');      
-    return this.http.get('http://172.31.38.163/api/getUser/',{headers}).pipe(map((response) =>response.json()))              
+    return this.http.get('http://172.31.38.163:8080/api/getUser/',{headers}).pipe(map((response) =>response.json()))              
   }  
  deleteUser(id){   
     return this.http.post('http://172.31.38.163:8080/api/deleteUser/',{'id': id}).pipe(map((response: Response) =>response.json()))               
