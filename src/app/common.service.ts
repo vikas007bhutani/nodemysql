@@ -15,7 +15,7 @@ export class CommonService {
   }   
   
   GetUser(){       
-    return this.http.get('http://172.31.38.163:8080/api/getUser/').pipe(map(response =>response.json()))              
+    return this.http.get('http://172.31.38.163:8080/api/getUser/').pipe(map((response: Response) =>response.json()))              
   }  
  deleteUser(id){   
     return this.http.post('http://172.31.38.163:8080/api/deleteUser/',{'id': id}).pipe(map((response: Response) =>response.json()))               
