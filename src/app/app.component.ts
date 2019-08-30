@@ -13,7 +13,7 @@ export class AppComponent {
     
      
   constructor(private newService   :CommonService) {   }  
-   Repdata:ilogindetails ;  
+   Repdata:any =[];  
    valbutton ="Save";  
    
    

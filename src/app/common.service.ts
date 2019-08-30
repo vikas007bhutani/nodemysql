@@ -14,7 +14,7 @@ export class CommonService {
     return this.http.post('http://172.31.38.163:8080/api/SaveUser/', user).pipe(map((response: Response) =>response.json()))              
   }   
   
-  GetUser<T>():Observable<ilogindetails>{ 
+  GetUser<T>():Observable<any>{ 
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'q= 0.8;application / json; q = 0.9');      
