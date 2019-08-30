@@ -111,8 +111,7 @@ app.use(cors({
    
   res.status(200).send({
     success: "true",
-    message: "todos retrieved successfully",
-    todos: ""
+    message: "todos retrieved successfully"
         })
   });
   
