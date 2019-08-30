@@ -18,19 +18,19 @@ const con = mysql.createConnection({
 //    else{ console.log('Connected to ' + db, ' + ', response); }  
 // });  
   
-con.connect((err) => {
-  if(err){
-    console.log('Error connecting to Db');
-    return;
-  }
-  console.log('Connection established');
-});
-con.query('SELECT * FROM loyaluser', (err,rows) => {
-  if(err) throw err;
+// con.connect((err) => {
+//   if(err){
+//     console.log('Error connecting to Db');
+//     return;
+//   }
+//   console.log('Connection established');
+// });
+// con.query('SELECT * FROM loyaluser', (err,rows) => {
+//   if(err) throw err;
 
-  console.log('Data received from Db:\n');
-  console.log(rows);
-});
+//   console.log('Data received from Db:\n');
+//   console.log(rows);
+// });
 var app = express()  
 app.use(bodyParser());  
 app.use(bodyParser.json({limit:'5mb'}));   
@@ -48,7 +48,15 @@ app.use(function (req, res, next) {
  //res.header(“Access-Control-Allow-Headers”, “Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization”);   
      next();  
  });  
- 
+ app.get('/:language(' + content.languageSelector + ')/:page', function (req, res)
+{
+    // Disable caching for content files
+    res.header("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.header("Pragma", "no-cache");
+    res.header("Expires", 0);
+
+    // rendering stuff here…
+}
 //  var Schema = mongo.Schema;  
   
 // var UsersSchema = new Schema({      
