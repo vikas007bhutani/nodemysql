@@ -56,7 +56,7 @@ app.use(function (req, res, next) {
     res.header("Expires", 0);
 
     // rendering stuff here…
-}
+});
 //  var Schema = mongo.Schema;  
   
 // var UsersSchema = new Schema({      
