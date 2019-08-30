@@ -18,7 +18,7 @@ export class CommonService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'q= 0.8;application / json; q = 0.9');      
-    return this.http.get('http://localhost:8080/api/getUser/').pipe(map((response:any) =>response.json()),catchError(<T>(error: any, result?: T) => {
+    return this.http.get('http://localhost:3000/api/getUser/').pipe(map((response:any) =>response.json()),catchError(<T>(error: any, result?: T) => {
       console.log(error);
       return of(result as T);
     }))              
