@@ -43,20 +43,14 @@ app.use(function (req, res, next) {
      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');    
      res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret');      
      res.setHeader('Access-Control-Allow-Credentials', true);    
-    
+     res.header("Cache-Control", "no-cache, no-store, must-revalidate");
+     res.header("Pragma", "no-cache");
+     res.header("Expires", 0);
 
  //res.header(“Access-Control-Allow-Headers”, “Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization”);   
      next();  
  });  
- app.get('/:language(' + content.languageSelector + ')/:page', function (req, res)
-{
-    // Disable caching for content files
-    res.header("Cache-Control", "no-cache, no-store, must-revalidate");
-    res.header("Pragma", "no-cache");
-    res.header("Expires", 0);
 
-    // rendering stuff here…
-});
 //  var Schema = mongo.Schema;  
   
 // var UsersSchema = new Schema({      
