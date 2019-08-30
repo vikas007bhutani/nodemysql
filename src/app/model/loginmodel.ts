@@ -1,5 +1,4 @@
-export interface ilogindetails {
-    
+export interface ilogindetails {    
     success: string;
     message: string;
     

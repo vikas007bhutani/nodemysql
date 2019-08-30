@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';  
 import {FormGroup,FormControl,Validators,FormsModule, } from '@angular/forms';  
 import {CommonService} from './common.service';  
-   
+import {ilogindetails } from '../app/model/loginmodel';
 import {Http,Response, Headers, RequestOptions } from '@angular/http';   
   
 @Component({  
@@ -13,7 +13,7 @@ export class AppComponent {
     
      
   constructor(private newService   :CommonService) {   }  
-   Repdata:any ;  
+   Repdata:ilogindetails ;  
    valbutton ="Save";  
    
    
