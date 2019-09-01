@@ -110,6 +110,7 @@ var movies = [
   { "title": "Ghostbusters" },
   { "title": "Star Wars" },
   { "title": "Batman Begins" }
+  { "title": "vikas bhutani" }
 ];
  app.get("/api/getUser",function(req,res){  
    
