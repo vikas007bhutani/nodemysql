@@ -20,7 +20,7 @@ export class CommonService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'q= 0.8;application / json; q = 0.9');      
-    return this.httpclient.get('http://13.233.166.104:3000/api/getUser/').pipe(map((response:Response) =>response.json()),catchError(<T>(error: any, result?: T) => {
+    return this.httpclient.get('http://13.233.166.104:3000/api/getUser/').pipe(map(response =>response),catchError(<T>(error: any, result?: T) => {
       console.log(error);
       return of(result as T);
     }))              
