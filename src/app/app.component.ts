@@ -22,9 +22,9 @@ export class AppComponent {
 ngOnInit() {    
   debugger;
   this.newService.GetUser().subscribe((response)=>{
-    console.log('response is ', response)
-    console.log('text is ', response.text)
-    console.log('text method is ', response.text)
+    let resSTR = JSON.stringify(response);
+    let resJSON = JSON.parse(resSTR);
+    console.log(resJSON._body);
 },(error) => {
     console.log('error is ', error)
 })
