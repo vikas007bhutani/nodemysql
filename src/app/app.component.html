@@ -10,7 +10,12 @@
  </td>  
 </tr>  
   <tr>
-  
+   
+    <ul>
+      <li *ngFor="let post of Repdata" [innerHTML]="post.title"> 
+      </li>
+    </ul>
+
         <td colspan="2">  
     <input type="submit" value="{{valbutton}}" />  
     </td>  
