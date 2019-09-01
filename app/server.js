@@ -106,13 +106,14 @@ app.use(cors({
   origin: true,
   credentials: true
 }));
-  
+var movies = [
+  { "title": "Ghostbusters" },
+  { "title": "Star Wars" },
+  { "title": "Batman Begins" }
+];
  app.get("/api/getUser",function(req,res){  
    
-  res.status(200).send({
-    success: "true",
-    message: "todos retrieved successfully"
-        })
+  res.status(200).send(movies)
       });
   
   

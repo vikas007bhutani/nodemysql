@@ -19,7 +19,7 @@ export class AppComponent {
    
 ngOnInit() {    
   debugger;
-  this.newService.GetUser(); 
+  this.newService.GetUser().subscribe(data => { this.Repdata = data});
   console.log(this.Repdata);
 }  
   
