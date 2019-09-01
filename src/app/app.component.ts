@@ -22,9 +22,9 @@ export class AppComponent {
 ngOnInit() {    
   debugger;
   this.newService.GetUser().subscribe((response)=>{
-    console.log('response is ', response)
+    this.Repdata=response;
 },(error) => {
-    console.log('error is ', error)
+    console.log('error is ', error);
 })
 }  
   
