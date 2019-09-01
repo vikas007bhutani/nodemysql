@@ -21,8 +21,11 @@ export class AppComponent {
    
 ngOnInit() {    
   debugger;
-  this.newService.GetUser().subscribe(data => { this.Repdata = data});
-  console.log(this.Repdata);
+  this.newService.GetUser().subscribe((response)=>{
+    console.log('response is ', response)
+},(error) => {
+    console.log('error is ', error)
+})
 }  
   
 // onSave = function(user,isValid: boolean) {    
