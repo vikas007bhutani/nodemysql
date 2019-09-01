@@ -23,7 +23,8 @@ ngOnInit() {
   debugger;
   this.newService.GetUser().subscribe((response)=>{
     console.log('response is ', response)
-    console.log('response is ', response[0])
+    console.log('text is ', response.text)
+    console.log('text method is ', response.text)
 },(error) => {
     console.log('error is ', error)
 })
