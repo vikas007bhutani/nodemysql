@@ -117,7 +117,7 @@ var movies = [
   res.status(200).send(movies)
       });
       app.post("/api/saveuser",function(req,res){  
-   con.query('SELECT * FROM loyaluser(username,password0 values('+req.username+','+req.password+')', (err,rows) => {
+   con.query('SELECT * FROM loyaluser(username,pass) values('+req.username+','+req.password+')', (err,rows) => {
   if(err) throw err;
    });
         res.status(200).send(req.body)
