@@ -122,7 +122,7 @@ var movies = [
    con.query("insert into loyaluser(username,pass) values('"+uname+"','"+pwd+"')", (err,rows) => {
   if(err) throw err;
    });
-        res.status(200).send(req.body)
+        res.status(200).send("User Added")
             });
   
 app.listen(3000, function () {  
