@@ -24,7 +24,7 @@ ngOnInit() {
   this.newService.GetUser().subscribe((response)=>{
     let resSTR = JSON.stringify(response);
     let resJSON = JSON.parse(resSTR);
-    console.log(resJSON._body);
+    this.Repdata=resJSON._body;
 },(error) => {
     console.log('error is ', error)
 })
