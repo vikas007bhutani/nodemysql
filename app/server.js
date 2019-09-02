@@ -117,7 +117,9 @@ var movies = [
   res.status(200).send(movies)
       });
       app.post("/api/saveuser",function(req,res){  
-   con.query('insert into loyaluser(username,pass) values('+req.body.username+','+req.body.password+')', (err,rows) => {
+        var uname=req.body.username;
+        var pwd=req.body.password;
+   con.query("insert into loyaluser(username,pass) values"(uname,pwd), (err,rows) => {
   if(err) throw err;
    });
         res.status(200).send(req.body)
