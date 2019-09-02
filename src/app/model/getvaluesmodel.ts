@@ -1,4 +1,4 @@
-export class StudentDetails {
+export interface titleDetails {
     
      title: string;
    
