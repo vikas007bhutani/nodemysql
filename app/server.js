@@ -119,7 +119,7 @@ var movies = [
       app.post("/api/saveuser",function(req,res){  
         var uname=req.body.username;
         var pwd=req.body.password;
-   con.query("insert into loyaluser(username,pass) values"(uname,pwd), (err,rows) => {
+   con.query("insert into loyaluser(username,pass) values('"+uname+"','"+pwd+"')", (err,rows) => {
   if(err) throw err;
    });
         res.status(200).send(req.body)
