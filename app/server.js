@@ -116,7 +116,7 @@ var movies = [
    
   res.status(200).send(movies)
       });
-      app.post("/api/postUser",function(req,res){  
+      app.post("/api/saveuser",function(req,res){  
    
         res.status(200).send(req.body)
             });

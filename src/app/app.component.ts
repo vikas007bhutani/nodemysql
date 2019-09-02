@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl,Validators,FormsModule, } from '@angular/forms';  
 import {CommonService} from './common.service';  
 import {ilogindetails } from '../app/model/loginmodel';
+import {titleDetails } from '../app/model/getvaluesmodel';
 import {Http,Response, Headers, RequestOptions } from '@angular/http'; 
 
 import { HttpClient } from  "@angular/common/http";  
@@ -17,11 +18,14 @@ export class AppComponent {
   constructor(private newService   :CommonService) {   }  
    Repdata:any=[] ;  
    valbutton ="Save";  
-   
+   ilogin:ilogindetails;
+   titles:titleDetails;
    
 ngOnInit() {    
   debugger;
   this.newService.GetUser().subscribe((response)=>{
+    this.Repdata=response;
+    console.log(this.Repdata);
     let resSTR = JSON.stringify(response);
     let resJSON = JSON.parse(resSTR);
     this.Repdata=Array.bind(resJSON._body);
@@ -30,14 +34,12 @@ ngOnInit() {
 })
 }  
   
-onSave = function(user,isValid: boolean) {    
- user.mode= this.valbutton;  
-  this.newService.saveUser(user)  
-  .subscribe(data =>  {  alert(data.data);  
-       
-    this.ngOnInit();    
-  }   
-  , (error) => this.errorMessage = error )  
+onSave = function(ilogin,isValid: boolean) {    
+   this.newService.saveUser(ilogin)  
+  .subscribe((response) =>  { 
+    console.log(response);
+    
+  },(error) =>{ this.errorMessage = error} )
     
 }      
 // edit = function(kk) {  

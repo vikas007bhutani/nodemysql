@@ -4,7 +4,7 @@
 <tr>  
 <td>User Name</td>  
 <td>   
-    <input name="uname" type="text" placeholder="UserName"     />  
+    <input name="uname" type="text" placeholder="UserName" [(ngModel)]="ilogin.UserName"     />  
     
   
  </td>  
@@ -12,7 +12,7 @@
 <tr>  
   <td>Password</td>  
   <td>    
-<input name="pwd" type="text" placeholder="Password" />  
+<input name="pwd" type="text" [(ngModel)]="ilogin.Password" placeholder="Password" />  
 </td> 
 </tr>
   <tr>
@@ -23,7 +23,7 @@
     </ul>
 
         <td colspan="2">  
-    <input type="submit" value="{{valbutton}}" />  
+    <input type="submit" click="onSave(this)" value="{{valbutton}}" />  
     </td>  
     </tr>  
  </table>  
