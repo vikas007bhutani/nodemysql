@@ -28,7 +28,7 @@ ngOnInit() {
     console.log(this.Repdata);
     let resSTR = JSON.stringify(response);
     let resJSON = JSON.parse(resSTR);
-    this.Repdata=Array.bind(resJSON._body);
+    console.log(  resJSON._body);
 },(error) => {
     console.log('error is ', error)
 })
