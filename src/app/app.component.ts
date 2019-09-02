@@ -34,7 +34,8 @@ ngOnInit() {
 })
 }  
   
-onSave = function(ilogin,isValid: boolean) {    
+onSave = function(ilogin) {    
+  debugger;
    this.newService.saveUser(ilogin)  
   .subscribe((response) =>  { 
     console.log(response);

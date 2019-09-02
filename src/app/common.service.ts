@@ -13,7 +13,8 @@ export class CommonService {
   
   constructor(private http: HttpClient) { }  
   
-  saveUser(ilogindetails){      
+  saveUser(ilogindetails){   
+    debugger;   
     return this.http.post('http://13.233.166.104:3000/api/saveuser/', ilogindetails);              
   }   
   
