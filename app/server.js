@@ -34,7 +34,7 @@ const con = mysql.createConnection({
 var app = express()  
 app.use(bodyParser());  
 app.use(bodyParser.json({limit:'5mb'}));   
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:true})); 
    
   
 app.use(function (req, res, next) {        
@@ -116,7 +116,10 @@ var movies = [
    
   res.status(200).send(movies)
       });
-  
+      app.post("/api/postUser",function(req,res){  
+   
+        res.status(200).send(req.body)
+            });
   
 app.listen(3000, function () {  
     

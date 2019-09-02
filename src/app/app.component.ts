@@ -24,22 +24,22 @@ ngOnInit() {
   this.newService.GetUser().subscribe((response)=>{
     let resSTR = JSON.stringify(response);
     let resJSON = JSON.parse(resSTR);
-    this.Repdata=Object.values(resJSON._body);
+    this.Repdata=Array.bind(resJSON._body);
 },(error) => {
     console.log('error is ', error)
 })
 }  
   
-// onSave = function(user,isValid: boolean) {    
-//  user.mode= this.valbutton;  
-//   this.newService.saveUser(user)  
-//   .subscribe(data =>  {  alert(data.data);  
+onSave = function(user,isValid: boolean) {    
+ user.mode= this.valbutton;  
+  this.newService.saveUser(user)  
+  .subscribe(data =>  {  alert(data.data);  
        
-//     this.ngOnInit();    
-//   }   
-//   , error => this.errorMessage = error )  
+    this.ngOnInit();    
+  }   
+  , (error) => this.errorMessage = error )  
     
-// }      
+}      
 // edit = function(kk) {  
 // this.id = kk._id;  
 // this.name= kk.name;  
