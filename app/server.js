@@ -18,13 +18,13 @@ const con = mysql.createConnection({
 //    else{ console.log('Connected to ' + db, ' + ', response); }  
 // });  
   
-// con.connect((err) => {
-//   if(err){
-//     console.log('Error connecting to Db');
-//     return;
-//   }
-//   console.log('Connection established');
-// });
+con.connect((err) => {
+  if(err){
+    console.log('Error connecting to Db');
+    return;
+  }
+  console.log('Connection established');
+});
 // con.query('SELECT * FROM loyaluser', (err,rows) => {
 //   if(err) throw err;
 
@@ -117,7 +117,9 @@ var movies = [
   res.status(200).send(movies)
       });
       app.post("/api/saveuser",function(req,res){  
-   
+   con.query('SELECT * FROM loyaluser(username,password0 values('+req.username+','+req.password+')', (err,rows) => {
+  if(err) throw err;
+   });
         res.status(200).send(req.body)
             });
   
