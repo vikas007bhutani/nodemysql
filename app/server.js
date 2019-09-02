@@ -107,7 +107,7 @@ app.use(cors({
   credentials: true
 }));
 var movies = [
-  { "title": "Ghostbusters" },
+  { "title": "C" },
   { "title": "Star Wars" },
   { "title": "Batman Begins" },
   { "title": "vikas bhutani" }
