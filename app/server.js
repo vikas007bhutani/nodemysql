@@ -116,15 +116,24 @@ var movies = [
    
   res.status(200).send(movies)
       });
-      app.post("/api/saveuser",function(req,res){  
+app.post("/api/saveuser",function(req,res){  
         var uname=req.body.username;
         var pwd=req.body.password;
-   con.query("insert into loyaluser(username,pass) values('"+uname+"','"+pwd+"')", (err,rows) => {
-  if(err) throw err;
-   });
-        res.status(200).send("User Added")
-            });
-  
+        var email=req.body.email;
+        var mobile=req.body.mobile;
+       con.query("insert into loyaluser(username,pass,email,mobile) values('"+uname+"','"+pwd+"','"+email+"',,'"+mobile+"')", (err,rows) => {
+      if(err) throw err;
+    });
+  res.status(200).send("User Added")
+});
+app.post("/api/loginuser",function(req,res){  
+    var uname=req.body.username;
+    var pwd=req.body.password;
+   res= con.query("select count(1) from  where username='"+uname+"' and pass="+pwd+"'", (err,rows) => {
+    if(err) throw err;
+    });
+    res.status(200).send(res)
+});
 app.listen(3000, function () {  
     
  console.log('Example app listening on port 8080!')  
