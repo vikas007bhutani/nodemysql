@@ -1,0 +1,45 @@
+<p></p>  
+ <table border='1'>  
+<tr>  
+<td>User Name</td>  
+<td>   
+    <input name="uname" type="text" placeholder="UserName" [(ngModel)]="ireg.username"     />  
+    
+  
+ </td>  
+</tr> 
+<tr>  
+  <td>Password</td>  
+  <td>    
+<input name="pwd" type="text" [(ngModel)]="ireg.password" placeholder="Password" />  
+</td> 
+</tr>
+<tr>  
+  <td>email</td>  
+  <td>    
+<input name="email" type="text" [(ngModel)]="ireg.email" placeholder="email" />  
+</td> 
+</tr>
+<tr>  
+  <td>mobile</td>  
+  <td>    
+<input name="mobile" type="text" [(ngModel)]="ireg.mobile" placeholder="mobile" />  
+</td> 
+</tr>
+  <tr>
+   
+    <!-- <ul>
+      <li *ngFor="let post of Repdata" [innerHTML]="post.title"> 
+      </li>
+    </ul> -->
+
+        <td colspan="2">  
+    <input type="button"  (click)="onSave()" value="Register" />  
+    </td>  
+    </tr>  
+ </table>  
+ 
+  
+
+  
+  

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http,Response, Headers, RequestOptions } from '@angular/http';   
 import {titleDetails } from '../app/model/getvaluesmodel';
 import {ilogindetails } from '../app/model/loginmodel';
+import {iregistrationdetails } from '../app/model/registrationmodel';
 import { Observable, of } from 'rxjs';  
 import { map, catchError } from 'rxjs/operators'; 
 
@@ -13,11 +14,14 @@ export class CommonService {
   
   constructor(private http: HttpClient) { }  
   
-  saveUser(ilogindetails){   
+  saveUser(iregistrationdetails){   
     debugger;   
-    return this.http.post('http://13.233.166.104:3000/api/saveuser/', ilogindetails);              
+    return this.http.post('http://13.233.166.104:3000/api/saveuser/', iregistrationdetails);              
   }   
-  
+  loginUser(ilogindetails){   
+    debugger;   
+    return this.http.post('http://13.233.166.104:3000/api/loginuser/', ilogindetails);              
+  }  
   GetUser(): Observable<any>{ 
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

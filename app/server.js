@@ -121,7 +121,7 @@ app.post("/api/saveuser",function(req,res){
         var pwd=req.body.password;
         var email=req.body.email;
         var mobile=req.body.mobile;
-       con.query("insert into loyaluser(username,pass,email,mobile) values('"+uname+"','"+pwd+"','"+email+"',,'"+mobile+"')", (err,rows) => {
+       con.query("insert into loyaluser(username,pass,email,mobile) values('"+uname+"','"+pwd+"','"+email+"','"+mobile+"')", (err,rows) => {
       if(err) throw err;
     });
   res.status(200).send("User Added")

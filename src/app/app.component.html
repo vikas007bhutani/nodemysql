@@ -1,34 +1,5 @@
-<form #userForm="ngForm"    novalidate>  
-  <p></p>  
- <table border='1'>  
-<tr>  
-<td>User Name</td>  
-<td>   
-    <input name="uname" type="text" placeholder="UserName" [(ngModel)]="ilogin.username"     />  
-    
-  
- </td>  
-</tr> 
-<tr>  
-  <td>Password</td>  
-  <td>    
-<input name="pwd" type="text" [(ngModel)]="ilogin.password" placeholder="Password" />  
-</td> 
-</tr>
-  <tr>
-   
-    <ul>
-      <li *ngFor="let post of Repdata" [innerHTML]="post.title"> 
-      </li>
-    </ul>
-
-        <td colspan="2">  
-    <input type="button"  (click)="onSave()" value="Login" />  
-    </td>  
-    </tr>  
- </table>  
-</form>   
-  
-
-  
-  
+<main class="pt-3">
+  <div class="col-12 px-4">
+    <router-outlet ></router-outlet>
+  </div>
+</main>
