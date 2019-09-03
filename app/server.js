@@ -129,11 +129,11 @@ app.post("/api/saveuser",function(req,res){
 app.post("/api/loginuser",function(req,res){  
     var uname=req.body.username;
     var pwd=req.body.password;
-   res= con.query("select count(1) from loyaluser where username='"+uname+"' and pass='"+pwd+"'", (err,rows) => {
+    con.query("select count(1) from loyaluser where username='"+uname+"' and pass='"+pwd+"'", (err,rows) => {
     if(err) throw err;
     });
-    console.log(res);
-    res.status(200).send(res.body)
+    console.log(row);
+    res.status(200).send(rows)
 });
 app.listen(3000, function () {  
     
