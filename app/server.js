@@ -130,10 +130,12 @@ app.post("/api/loginuser",function(req,res){
     var uname=req.body.username;
     var pwd=req.body.password;
     con.query("select count(1) from loyaluser where username='"+uname+"' and pass='"+pwd+"'", (err,rows) => {
+      
     if(err) throw err;
+    res.status(200).send(rows);
     });
-    console.log(rows);
-    res.status(200).send(rows)
+    //console.log(rows);
+    
 });
 app.listen(3000, function () {  
     
