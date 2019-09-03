@@ -132,7 +132,7 @@ app.post("/api/loginuser",function(req,res){
     con.query("select count(1) from loyaluser where username='"+uname+"' and pass='"+pwd+"'", (err,rows) => {
     if(err) throw err;
     });
-    console.log(row);
+    console.log(rows);
     res.status(200).send(rows)
 });
 app.listen(3000, function () {  
